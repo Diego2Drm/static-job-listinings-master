@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle, Text, Theme } from "./GlobalStyle"
+import { GlobalStyle, Theme } from "./GlobalStyle"
+import { Layout } from "./Layout"
 
 function App() {
 
@@ -7,9 +8,9 @@ function App() {
 
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
-        <div>
-          <Text>Static Job Listings</Text>
-        </div>
+      <Layout>
+        <h1>Static Job Listings</h1>
+      </Layout>
     </ThemeProvider>
 
   )

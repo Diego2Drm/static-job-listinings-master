@@ -20,7 +20,3 @@ export const Theme = {
     VeryDarkGrayishCyan: "#2c3a3a",
   }
 }
-
-export const Text = styled.h1`
-color: ${Theme.colors.DarkGrayishCyan};
-`
