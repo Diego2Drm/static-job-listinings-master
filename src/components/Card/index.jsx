@@ -4,10 +4,21 @@ import { Article, PositionDiv, RoleDiv } from "./styles";
 import styled from "styled-components";
 import { Theme } from "../../GlobalStyle";
 
+const ContainerCompanyDiv = styled.div`
+@media (min-width: 768px){
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+`
 const LogoImg = styled.img`
 width: 5rem;
 position: absolute;
 top: -5.5rem;
+@media (min-width: 768px){
+  position: static;
+  width: initial;
+}
 `
 const CompanyDiv = styled.div`
 display: flex;
@@ -98,28 +109,33 @@ const Card = () => {
       {info.map(item => (
         <Article key={item.id}>
           <PositionDiv>
-            <LogoImg src={item.logo} alt={item.position} />
-            <CompanyDiv>
-              <CompanyP>{item.company}</CompanyP>
-              {item.new && <NewSpan>New!</NewSpan>}{item.featured && <FeaturesSpan>featured</FeaturesSpan>}
-            </CompanyDiv>
-            <PositionP>{item.position}</PositionP>
-            <MoreInfoDiv>
-              <MoreInfoP>{item.postedAt}</MoreInfoP>
-              <MoreInfoP>{item.contract}</MoreInfoP>
-              <MoreInfoP>{item.location}</MoreInfoP>
-            </MoreInfoDiv>
+            <ContainerCompanyDiv>
+              <LogoImg src={item.logo} alt={item.position} />
+              <div>
+                <CompanyDiv>
+                  <CompanyP>{item.company}</CompanyP>
+                  {item.new && <NewSpan>New!</NewSpan>}{item.featured && <FeaturesSpan>featured</FeaturesSpan>}
+                </CompanyDiv>
+                <PositionP>{item.position}</PositionP>
+                <MoreInfoDiv>
+                  <MoreInfoP>{item.postedAt}</MoreInfoP>
+                  <MoreInfoP>{item.contract}</MoreInfoP>
+                  <MoreInfoP>{item.location}</MoreInfoP>
+                </MoreInfoDiv>
+              </div>
+            </ContainerCompanyDiv>
           </PositionDiv>
+
           <RoleDiv>
             <RoleP>{item.role}</RoleP>
             <RoleP>{item.level}</RoleP>
             {
-              item.languages.map((lenguage, i) => 
-              <RoleP key={i}>{lenguage}</RoleP>)
+              item.languages.map((lenguage, i) =>
+                <RoleP key={i}>{lenguage}</RoleP>)
             }
             {
-              item.tools?.map((tool, i) => 
-              <RoleP key={i}>{tool}</RoleP>)
+              item.tools?.map((tool, i) =>
+                <RoleP key={i}>{tool}</RoleP>)
             }
           </RoleDiv>
         </Article>

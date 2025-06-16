@@ -1,6 +1,6 @@
 import React from "react"
 import ImgMb from "./assets/images/bg-header-mobile.svg"
-// import ImgDp from "./assets/images/bg-header-desktop.svg"
+import ImgDp from "./assets/images/bg-header-desktop.svg"
 import styled from "styled-components"
 import { Theme } from "./GlobalStyle"
 
@@ -18,25 +18,26 @@ height: 15.6rem;
 const ImgMobile = styled.img`
 position: absolute;
 display: flex;
-@media (min-width: 768px) {
+width: 100%;
+@media (min-width: 1024px) {
   display: none;
 }
 `
-// const ImgDesktop = styled.img`
-// position: absolute;
-// display: none;
-// @media (min-width: 768px) {
-//   display: flex;
-//   width: 100%;
-// }
-// `
+const ImgDesktop = styled.img`
+position: absolute;
+display: none;
+@media (min-width: 1024px) {
+  display: flex;
+  width: 100%;
+}
+`
 
 const Layout = ({ children }) => {
   return (
     <>
       <ContainerImgs>
         <ImgMobile src={ImgMb} alt="image-background-mobile" />
-        {/* <ImgDesktop src={ImgDp} alt="image-background-mobile" /> */}
+        <ImgDesktop src={ImgDp} alt="image-background-mobile" />
       </ContainerImgs>
       <Section>
         {children}
