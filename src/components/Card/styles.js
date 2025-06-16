@@ -39,3 +39,101 @@ gap: 2rem;
   padding-right: 3rem;
 }
 `
+
+// Card
+export const ContainerCompanyDiv = styled.div`
+@media (min-width: 768px){
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+`
+export const LogoImg = styled.img`
+width: 5rem;
+position: absolute;
+top: -5.5rem;
+@media (min-width: 768px){
+  position: static;
+  width: initial;
+}
+`
+export const CompanyDiv = styled.div`
+display: flex;
+align-items: center;
+gap: 1rem;
+margin: 1rem 0;
+`
+export const CompanyP = styled.p`
+color: ${Theme.colors.DesaturatedDarkCyan};
+font-size: 1.7rem;
+font-weight: bold;
+margin-right: 1rem;
+`
+export const Span = styled.span`
+border-radius: 2rem;
+color: #fff;
+text-transform: uppercase;
+padding: .5rem .7rem;
+font-size: 1.4rem;
+font-weight: 600;
+text-align: center;
+`
+export const NewSpan = styled(Span)`
+background: ${Theme.colors.DesaturatedDarkCyan};
+`
+export const FeaturesSpan = styled(Span)`
+background: ${Theme.colors.VeryDarkGrayishCyan};
+`
+export const PositionP = styled.p`
+color: ${Theme.colors.VeryDarkGrayishCyan};
+font-size: 1.7rem;
+margin: 1.5rem 0;
+font-weight: bold;
+`
+export const MoreInfoDiv = styled.div`
+display: flex;
+margin: 1rem 0;
+gap: 3rem;
+`
+export const MoreInfoP = styled.p`
+color: #a1a1a1;
+font-size: 1.5rem;
+font-weight: 700;
+&:nth-child(2){
+  position: relative;
+  &::before{
+    content: "";
+    width: .4rem;
+    height: .4rem;
+    background: #a1a1a1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    transform: translate(-50%, -50%);
+  }
+}
+&:nth-child(3){
+  position: relative;
+  &::before{
+    content: "";
+    width: .4rem;
+    height: .4rem;
+    background: #a1a1a1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    transform: translate(-50%, -50%);
+  }
+}
+`
+export const RoleP = styled.p`
+color: ${Theme.colors.DesaturatedDarkCyan};
+background: ${Theme.colors.LightGrayishCyanBackground};
+padding: 1rem;
+font-weight: bold;
+font-size: 1.6rem;
+text-align: center;
+border-radius: 1rem;
+`
