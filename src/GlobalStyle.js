@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 html{
   font-size: 62.5%;
+  font-family: "League Spartan", sans-serif;
 }
 `
 

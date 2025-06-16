@@ -6,7 +6,7 @@ import { Theme } from "./GlobalStyle"
 
 const Section = styled.section`
 background: ${Theme.colors.LightGrayishCyanBackground};
-padding: 3rem 2rem;
+padding: 6rem 2rem 3rem;
 position: relative;
 min-height: 100vh;
 `

@@ -1,6 +1,7 @@
 import { ThemeProvider } from "styled-components"
 import { GlobalStyle, Theme } from "./GlobalStyle"
 import { Layout } from "./Layout"
+import { Card } from "./components/Card"
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
       <Layout>
-        <h1>Static Job Listings</h1>
+        <Card />
       </Layout>
     </ThemeProvider>
 
