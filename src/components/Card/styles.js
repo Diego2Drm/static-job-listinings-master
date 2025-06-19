@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Theme } from "../../GlobalStyle"
 
 export const Article = styled.article`
+/* border: 2px solid ${({ $hasData }) => ($hasData ? "red" : "transparent")}; */
+margin-top: ${({ $hasData }) => ($hasData ? "5.5rem" : "0rem")};
 background: #fff;
 display: flex;
 flex-direction: column;
@@ -136,4 +138,60 @@ font-weight: bold;
 font-size: 1.6rem;
 text-align: center;
 border-radius: 1rem;
+cursor: pointer;
+`
+
+// Buttons Filtered
+
+export const ButtonsSection = styled.section`
+background: #fff;
+border-radius: 1rem;
+box-shadow: 0 0 1rem ${Theme.colors.DesaturatedDarkCyan};
+width: 90%;
+position: absolute;
+top: -4rem;
+left: 50%;
+transform: translateX(-50%);
+padding: 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+@media (min-width: 768px){
+  width: 78%;
+}
+`
+export const ButtonsDiv = styled.div`
+display: flex; 
+gap: 1rem; 
+flex-wrap: wrap;
+`
+export const ButtonContent = styled.div`
+display: flex; 
+align-items: center;
+gap: 1rem; 
+background: ${Theme.colors.LightGrayishCyanFilterTablets};
+/* padding: .7rem; */
+border-radius: .5rem;
+overflow: hidden;
+`
+export const FilteredP = styled.p`
+color: ${Theme.colors.DesaturatedDarkCyan};
+font-size: 1.5rem;
+font-weight: bold;
+padding: .7rem;
+`
+export const ButtonRemove = styled.button`
+width: 100%;
+height: 100%;
+background: ${Theme.colors.DesaturatedDarkCyan};
+border: none;
+padding: .7rem;
+cursor: pointer;
+`
+export const ButtonClear = styled.button`
+border: none;
+color: ${Theme.colors.DarkGrayishCyan};
+font-weight: bold;
+background: none;
+cursor: pointer;
 `

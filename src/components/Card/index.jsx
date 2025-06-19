@@ -1,14 +1,32 @@
 import React, { useState } from "react";
-import data from "../../data.json"
+// import data from "../../data.json"
 import { Article, CompanyDiv, CompanyP, ContainerCompanyDiv, FeaturesSpan, LogoImg, MoreInfoDiv, MoreInfoP, NewSpan, PositionDiv, PositionP, RoleDiv, RoleP } from "./styles";
+import { useDispatch, useSelector } from "react-redux";
+import { filterFrontEnd, originalState } from "../../features/filter/filterSlice";
+import { ButtonsFiltered } from "./ButtonsFiltered";
 
 const Card = () => {
-  const [info, setInfo] = useState(data);
+  const info = useSelector(state => state.filter);
+  const dispacth = useDispatch();
+  const [role, setRole] = useState("")
+
+  const frontendFiltered = (value) => {
+    dispacth(filterFrontEnd(value))
+    setRole(value)
+  }
+  const handleState = () => {
+    dispacth(originalState())
+    setRole("")
+  }
 
   return (
     <>
+      {
+        role &&
+        <ButtonsFiltered role={role} onReset={handleState} />
+      }
       {info.map(item => (
-        <Article key={item.id}>
+        <Article key={item.id} $hasData={role}>
           <PositionDiv>
             <ContainerCompanyDiv>
               <LogoImg src={item.logo} alt={item.position} />
@@ -28,7 +46,7 @@ const Card = () => {
           </PositionDiv>
 
           <RoleDiv>
-            <RoleP>{item.role}</RoleP>
+            <RoleP onClick={() => frontendFiltered(item.role)}>{item.role}</RoleP>
             <RoleP>{item.level}</RoleP>
             {
               item.languages.map((lenguage, i) =>
