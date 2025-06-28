@@ -91,6 +91,11 @@ color: ${Theme.colors.VeryDarkGrayishCyan};
 font-size: 1.7rem;
 margin: 1.5rem 0;
 font-weight: bold;
+cursor: pointer;
+transition: all 500ms ease-in-out;
+&:hover{
+  color: ${Theme.colors.DesaturatedDarkCyan};
+}
 `
 export const MoreInfoDiv = styled.div`
 display: flex;
@@ -139,6 +144,11 @@ font-size: 1.6rem;
 text-align: center;
 border-radius: 1rem;
 cursor: pointer;
+transition: all 500ms ease-in-out;
+&:hover{
+  background: ${Theme.colors.DesaturatedDarkCyan};
+  color: #fff;
+}
 `
 
 // Buttons Filtered
@@ -187,6 +197,10 @@ background: ${Theme.colors.DesaturatedDarkCyan};
 border: none;
 padding: .7rem;
 cursor: pointer;
+transition: all 500ms ease-in-out;
+&:hover{
+  background: ${Theme.colors.VeryDarkGrayishCyan};
+}
 `
 export const ButtonClear = styled.button`
 border: none;
@@ -194,4 +208,9 @@ color: ${Theme.colors.DarkGrayishCyan};
 font-weight: bold;
 background: none;
 cursor: pointer;
+transition: border 500ms ease-in-out;
+&:hover{
+  color: ${Theme.colors.DesaturatedDarkCyan};
+  border-bottom: 1px solid ${Theme.colors.DesaturatedDarkCyan};
+}
 `
