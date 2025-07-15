@@ -4,6 +4,7 @@ import { Article, CompanyDiv, CompanyP, ContainerCompanyDiv, FeaturesSpan, LogoI
 import { useDispatch, useSelector } from "react-redux";
 import { applyFilters, removeFilter } from "../../features/filter/filterSlice";
 import { ButtonsFiltered } from "./ButtonsFiltered";
+import { imgMap } from "../../utils/imgsForCards";
 
 const Card = () => {
   const { data, filtered } = useSelector(state => state.filter);
@@ -80,7 +81,7 @@ const Card = () => {
         <Article key={item.id} $hasData={hasActiveFilters}>
           <PositionDiv>
             <ContainerCompanyDiv>
-              <LogoImg src={item.logo} alt={item.position} />
+              <LogoImg src={imgMap[item.logo]} alt={item.position} />
               <div>
                 <CompanyDiv>
                   <CompanyP>{item.company}</CompanyP>
